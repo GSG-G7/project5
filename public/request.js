@@ -1,17 +1,19 @@
 
-const fetch = require("node-fetch");
+// const fetch = require("node-fetch");
+
+console.log("Request.js")
 
 const url  = '/search';
 
-const input = document.getElementById('search__input').value;
-document.getElementById('search__button').addEventListener('click',(e)=>{
-
+document.getElementById('search_form').addEventListener('submit',(e)=>{
+    console.log("search form")
     e.preventDefault();
+    const input = document.getElementById('search__input').value;
+    
         fetch(url, {
             method: 'POST',
-            headers : new Headers(),
+            headers : {'Content-Type':'application/json'},
             body:JSON.stringify({input:input})
         }).then((res) => res.json())
-        .then((data) =>  console.log(data))
         .catch((err)=>console.log(err))
 })
