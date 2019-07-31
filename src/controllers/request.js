@@ -19,3 +19,7 @@ const gifReqest = (url) => {
 gifReqest(gifUrl)
 .then(res =>  console.log(res.data[0].images.fixed_width.webp ))
 .catch(error => console.log(error.message));
+
+exports.makerequest = (req, res) => {
+    
+}
