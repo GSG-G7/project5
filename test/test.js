@@ -31,3 +31,15 @@ test('testing at status code equal 404', t => {
             t.end();
         })
 })
+
+test('testing at route /search', t => {
+    supertest(app)
+    .post('/search')
+    .expect(200)
+    .expect('Content-Type', 'application/json')
+    .end((err,res) => {
+        t.error(err);
+        t.end();
+    })
+
+})
