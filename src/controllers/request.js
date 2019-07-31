@@ -13,19 +13,12 @@ const gifReqest = (url) => {
  };
  
 
-exports.get = (req, res) => {
-    console.log(res);
-    res.send('ok')
-}
-
 exports.post = (req,res) =>{
-
-   const value =req.body.input;
+   const value =req.body.input.trim();
    const gifUrl = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${value}`;
     gifReqest(gifUrl)
     .then(apiRes =>  {
         res.send(apiRes)
         })
-    .catch(error => console.log(error.message));
-    // res.redirect('/');
+    .catch(error => error.message);
 }
