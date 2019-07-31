@@ -1,4 +1,9 @@
 const url  = '/search';
+const drinkImg = document.getElementById('container__img')
+const ingredient1 = document.getElementById('container__ingredient1')
+const ingredient2 = document.getElementById('container__ingredient2')
+const ingredient3 = document.getElementById('container__ingredient3')
+
 
 document.getElementById('search_form').addEventListener('submit',(e)=>{
     console.log("search form")
@@ -10,6 +15,13 @@ document.getElementById('search_form').addEventListener('submit',(e)=>{
             body:JSON.stringify({input:input})
         })
         .then((res) => res.json())
-        .then((res) => console.log(res.drinks[0].strDrinkThumb))
+        .then((res) => {
+            drinkImg.src = res.drinks[0].strDrinkThumb;
+            ingredient1.textContent = res.drinks[0].strIngredient1;
+            ingredient2.textContent = res.drinks[0].strIngredient2;
+            ingredient3.textContent = res.drinks[0].strIngredient3;
+
+
+        })
         .catch((err)=>console.log(err))
 }); 
