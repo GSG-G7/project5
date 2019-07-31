@@ -21,7 +21,7 @@ exports.get = (req, res) => {
 exports.post = (req,res) =>{
 
    const value =req.body.input;
-   const gifUrl = `http://api.giphy.com/v1/gifs/search?q=${value}&limit=10&api_key=dc6zaTOxFJmzC`;
+   const gifUrl = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${value}`;
     gifReqest(gifUrl)
     .then(apiRes =>  {
         res.send(apiRes)

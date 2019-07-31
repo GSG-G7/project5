@@ -10,6 +10,6 @@ document.getElementById('search_form').addEventListener('submit',(e)=>{
             body:JSON.stringify({input:input})
         })
         .then((res) => res.json())
-        .then((res) => console.log(res.data[0].images.fixed_width.webp))
+        .then((res) => console.log(res.drinks[0].strDrinkThumb))
         .catch((err)=>console.log(err))
 }); 
