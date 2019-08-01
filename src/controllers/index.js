@@ -1,10 +1,12 @@
 const express = require('express');
-const router = express.Router();
-const request = require('./request')
-const error = require('./error');
 
-router.post('/search',request.post)
-router.use(error.clienterror);
-router.use(error.servererror);
+const { post } = require('./request');
+const { clientError, serverError } = require('./error');
+
+const router = express.Router();
+
+router.post('/search', post);
+router.use(clientError);
+router.use(serverError);
 
 module.exports = router;

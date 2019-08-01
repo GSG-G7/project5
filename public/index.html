@@ -4,21 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>project 5</title>
+    <link rel="stylesheet" href="./css/style.css" type="text/css">
+    <title>Drink APP</title>
 </head>
 <body>
-    <form id='search_form' autocomplete="off">
-    <input type="text" name="input" id="search__input" value="" placeholder="enter" aria-label="a">
-    <input type="submit" name="button" id ="search__button" aria-label="b">
-</form>
-<section id='container'>
-    <img src="https://media.istockphoto.com/photos/orange-juice-splash-picture-id537837754?k=6&m=537837754&s=612x612&w=0&h=nf7kCDiyPuzD2JWm38nYqRUNPUCTwION1jKLNOs2w50=" alt="" id="container__img">
-    <ul>
-        <li id="container__ingredient1"></li>
-        <li id="container__ingredient2"></li>
-        <li id="container__ingredient3"></li>
-    </ul>
-</section>
+    <section class="search">
+        <h1 class="search__h1">Drink APP</h1>
+        <form id='search_form' class="search__form" autocomplete="off">
+            <input type="text" name="input" id="search__input" class="search__input" value="" placeholder="Enter your favorite drink" aria-label="a">
+            <input type="submit" name="button" value="Search" id ="search__button" class="search__button" aria-label="b">
+        </form>
+        <div id='search__container'>
+            <img src="https://media.istockphoto.com/photos/orange-juice-splash-picture-id537837754?k=6&m=537837754&s=612x612&w=0&h=nf7kCDiyPuzD2JWm38nYqRUNPUCTwION1jKLNOs2w50=" alt="" id="search__img">
+           <div class="search__ingredients">
+               <h3 class="search__title">Drink Ingredients</h3>
+               <ol class="search__list">
+                   <li id="search__ingredient1">First - Ingredient</li>
+                   <li id="search__ingredient2">Second - Ingredient</li>
+                   <li id="search__ingredient3">Third - Ingredient</li>
+               </ol>
+           </div>
+        </div>
+    </section>
 <script src="./request.js" type="application/javascript"></script>
 </body>
 </html>

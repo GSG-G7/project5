@@ -14,7 +14,7 @@ test('testing at status code equal 200',(t) => {
     .get('/')
     .expect(200)
     .expect('Content-Type', /html/)
-    .end((err,res) => {
+    .end((err) => {
         t.error(err);
         t.end();
     })
@@ -27,7 +27,7 @@ test('testing at status code equal 404', t => {
         .expect('Content-Type', /html/)
         .end((err, res) => {
             t.error(err);
-            t.equal(res.text, 'clinet error', 'Expected got clinet error' )
+            t.equal(res.text, 'Page Not Found', 'Expected got clinet error' )
             t.end();
         })
 })
@@ -36,7 +36,7 @@ test('testing at route /search', t => {
     supertest(app)
     .post('/search')
     .expect(200)
-    .expect('Content-Type', 'application/json')
+    .expect('Content-Type',/json/)
     .end((err,res) => {
         t.error(err);
         t.end();
