@@ -1,13 +1,13 @@
-const path = require('path');
 
-exports.clienterror = (req, res) => {
-  res
-    .status(404)
-    .send('clinet error');
-};
+exports.clientError = (req, res) => {
+    res
+      .status(404)
+      .send('Page Not Found')
+}
 
-exports.servererror = (err, req, res, next) => {
-  res
-    .status(500)
-    .send('server error');
-};
+exports.serverError = (err, req, res, next) => {
+    res
+      .status(500)
+      .send('sorry, Internal server error')
+}
+
