@@ -1,16 +1,16 @@
 
 const test = require('tape');
-const supertest = require('supertest')
-const app =require('../src/app')
+const supertest = require('supertest');
+const app = require('../src/app');
 
 
-test("testing",(t)=>{
-    t.equal(5,5,"return 5")
-    t.end();
-})
+test('testing', (t) => {
+  t.equal(5, 5, 'return 5');
+  t.end();
+});
 
-test('testing at status code equal 200',(t) => {
-    supertest(app)
+test('testing at status code equal 200', (t) => {
+  supertest(app)
     .get('/')
     .expect(200)
     .expect('Content-Type', /html/)
@@ -32,8 +32,8 @@ test('testing at status code equal 404', t => {
         })
 })
 
-test('testing at route /search', t => {
-    supertest(app)
+test('testing at route /search', (t) => {
+  supertest(app)
     .post('/search')
     .expect(200)
     .expect('Content-Type',/json/)
