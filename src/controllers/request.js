@@ -5,8 +5,9 @@ const gifReqest = (url) => {
      request(url, (error, response ,body )=>{
           if(error){
              reject(error);
-         }
+         }else {
              resolve(JSON.parse(body));
+         }
          });
      });
  };
